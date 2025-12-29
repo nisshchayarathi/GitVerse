@@ -5,17 +5,17 @@
  */
 export const getApiUrl = (): string => {
   const env = import.meta.env.VITE_API_URL
-  
+
   // In development, use the configured API URL
   if (env && typeof window !== 'undefined' && window.location.hostname === 'localhost') {
     return env
   }
-  
+
   // In production, use relative path or current origin
   if (typeof window !== 'undefined') {
     return window.location.origin
   }
-  
+
   return ''
 }
 

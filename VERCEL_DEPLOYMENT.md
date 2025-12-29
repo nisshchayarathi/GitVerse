@@ -3,6 +3,7 @@
 ## Full-Stack Deployment Setup
 
 Your application is now configured for full-stack deployment on Vercel with:
+
 - **Frontend**: React + Vite (builds to `dist/`)
 - **Backend**: Node.js Express API (serverless functions in `api/`)
 
@@ -18,9 +19,9 @@ Your application is now configured for full-stack deployment on Vercel with:
 
    ```
    DATABASE_URL=postgresql://neondb_owner:npg_WNoQ7iAvHKO1@ep-dawn-dew-a1jd5jmj-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&schema=public
-   
+
    GEMINI_API_KEY=AIzaSyD3Y54aET7vv9VK70Rfv09l65Ns9GGTBms
-   
+
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
    ```
 
@@ -46,11 +47,13 @@ vercel --prod
 ## What Gets Deployed
 
 ### Frontend
+
 - React Single Page Application
 - Vite optimized build
 - Static hosting via Vercel CDN
 
 ### Backend
+
 - Express.js API
 - Serverless Functions (Node.js runtime)
 - Routes:
@@ -77,6 +80,7 @@ Vercel Edge Network
 ## Environment Variables
 
 Required for production:
+
 - `DATABASE_URL` - Neon PostgreSQL connection string
 - `GEMINI_API_KEY` - Google Gemini API key for AI features
 - `JWT_SECRET` - Secret for JWT token signing
@@ -96,6 +100,7 @@ Once connected to GitHub, every push to `main` branch will automatically deploy 
 ## Troubleshooting
 
 If API calls fail:
+
 1. Check environment variables are set correctly in Vercel dashboard
 2. Verify database connection with: `https://your-gitverse-domain.vercel.app/api/health`
 3. Check Vercel logs: Dashboard → Project → Deployments → View Logs
@@ -103,6 +108,7 @@ If API calls fail:
 ## Support
 
 For more info on Vercel deployments, see:
+
 - [Vercel Documentation](https://vercel.com/docs)
 - [Node.js on Vercel](https://vercel.com/docs/functions/nodejs)
 - [Environment Variables](https://vercel.com/docs/projects/environment-variables)
