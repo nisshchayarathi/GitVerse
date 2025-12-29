@@ -12,11 +12,7 @@ dotenv.config()
 const app = express()
 
 // CORS configuration
-const corsOrigins = [
-  'http://localhost:5173',
-  'http://127.0.0.1:5173',
-  'http://localhost:3000',
-]
+const corsOrigins = ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000']
 
 if (process.env.VERCEL_URL) {
   corsOrigins.push(`https://${process.env.VERCEL_URL}`)

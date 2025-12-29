@@ -1,22 +1,26 @@
 /**
  * Get the API base URL
- * In development: uses VITE_API_URL from .env
- * In production: uses the same origin (Vercel deployment)
+ * In development (localhost): uses VITE_API_URL from .env
+ * In production (any other domain): uses the current origin/domain
  */
 export const getApiUrl = (): string => {
-  const env = import.meta.env.VITE_API_URL
-
-  // In development, use the configured API URL
-  if (env && typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    return env
+  if (typeof window === 'undefined') {
+    return ''
   }
 
-  // In production, use relative path or current origin
-  if (typeof window !== 'undefined') {
-    return window.location.origin
+  const hostname = window.location.hostname
+  const protocol = window.location.protocol
+
+  // In development (localhost), use the configured API URL
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    const env = import.meta.env.VITE_API_URL
+    if (env) {
+      return env
+    }
   }
 
-  return ''
+  // In production or if env is not set, use the same origin
+  return `${protocol}//${hostname}${window.location.port ? ':' + window.location.port : ''}`
 }
 
 /**
