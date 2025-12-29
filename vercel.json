@@ -3,6 +3,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "env": {
-    "VITE_BACKEND_URL": "https://backend-l68awgztk-nisshchayas-projects.vercel.app"
+    "VITE_BACKEND_URL": "https://gitverse-backend-pmgeqmz2m-nisshchayas-projects.vercel.app"
   }
 }
