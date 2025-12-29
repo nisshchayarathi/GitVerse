@@ -1,32 +1,21 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "builds": [
     {
       "src": "api/index.ts",
       "use": "@vercel/node"
-    },
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/dist/static/$1"
+      "dest": "api/index.ts"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/$1"
-    },
-    {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/dist/index.html"
+      "dest": "index.html"
     }
   ],
   "env": {
