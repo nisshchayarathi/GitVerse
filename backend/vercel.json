@@ -1,10 +1,14 @@
 {
   "version": 2,
   "buildCommand": "npm install",
+  "functions": {
+    "server.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "env": {
     "DATABASE_URL": "postgresql://neondb_owner:npg_WNoQ7iAvHKO1@ep-dawn-dew-a1jd5jmj-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&schema=public",
     "GEMINI_API_KEY": "AIzaSyD3Y54aET7vv9VK70Rfv09l65Ns9GGTBms",
-    "JWT_SECRET": "your-super-secret-jwt-key-change-this-in-production",
-    "FRONTEND_URL": "https://gitverse-lc1yd1nfs-nisshchayas-projects.vercel.app"
+    "JWT_SECRET": "your-super-secret-jwt-key-change-this-in-production"
   }
 }
