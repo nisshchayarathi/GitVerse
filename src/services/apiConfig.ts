@@ -1,7 +1,7 @@
 /**
  * Get the API base URL
- * In development (localhost): uses VITE_API_URL from .env
- * In production (any other domain): uses the current origin/domain
+ * In development (localhost): uses http://localhost:3001
+ * In production: uses the current domain
  */
 export const getApiUrl = (): string => {
   if (typeof window === 'undefined') {
@@ -11,16 +11,13 @@ export const getApiUrl = (): string => {
   const hostname = window.location.hostname
   const protocol = window.location.protocol
 
-  // In development (localhost), use the configured API URL
+  // In development (localhost), always use localhost:3001
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    const env = import.meta.env.VITE_API_URL
-    if (env) {
-      return env
-    }
+    return 'http://localhost:3001'
   }
 
-  // In production or if env is not set, use the same origin
-  return `${protocol}//${hostname}${window.location.port ? ':' + window.location.port : ''}`
+  // In production, use the same domain (Vercel will route /api to serverless functions)
+  return `${protocol}//${window.location.host}`
 }
 
 /**
