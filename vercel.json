@@ -16,8 +16,17 @@
       "dest": "api"
     },
     {
+      "src": "/static/(.*)",
+      "dest": "/dist/static/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "dist/index.html"
+      "dest": "/dist/$1"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/dist/index.html"
     }
   ],
   "env": {
