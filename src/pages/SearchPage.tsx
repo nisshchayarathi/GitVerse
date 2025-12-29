@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import {
-  Search,
-  Grid,
-  List,
-  Filter,
-  Star,
-  GitBranch,
-  Clock,
-  TrendingUp,
-  Activity,
-} from 'lucide-react'
+import { Search, Grid, List, GitBranch, Clock, Activity } from 'lucide-react'
 import { DashboardLayout } from '@/components/layout/DashboardLayout'
 import {
   Card,
